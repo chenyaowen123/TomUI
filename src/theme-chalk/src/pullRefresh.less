@@ -1,0 +1,29 @@
+@import './common/var';
+
+.tom-pullRefresh {
+    overflow-y: scroll;
+    overflow-x: hidden;
+    background-color: @background-color;
+    position: relative;
+
+    &__content{
+        min-width: 100%;
+        min-height: 100%;
+    }
+    &__top {
+        position: absolute;
+        height: 50PX;
+        line-height: 50PX;
+        font-size: 14PX;
+        color: @gray-dark;
+        left: 50%;
+        top: 0;
+        transform: translate(-50%, -50PX);
+        i{
+            font-size: 16PX;
+            margin-right: 5PX;
+            vertical-align:middle;
+            margin-top: -3PX;
+        }
+    }
+}

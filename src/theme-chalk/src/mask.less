@@ -1,0 +1,33 @@
+@import './common/var';
+@import './common/animation';
+
+
+.tom-lock-scroll{
+    overflow: hidden !important;
+    position: fixed;
+    width: 100%;
+}
+.tom-mask {
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    overflow: hidden;
+    &--close{
+        transform: translate(100%,100%);
+    }
+    &__mask{
+        position: absolute;
+        left: 0;
+        right: 0;;
+        top:0;
+        bottom: 0;
+        background-color: @overlay-background-color;
+    }
+    &__content{
+        position: absolute;
+    }
+}
+
+

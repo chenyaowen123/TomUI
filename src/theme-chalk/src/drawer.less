@@ -1,0 +1,35 @@
+@import './common/var';
+
+.tom-drawer {
+    margin: 0;
+    padding: 0;
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    overflow-x: hidden;
+    &__aside-warp{
+        position: absolute;
+        top: 0;
+        bottom: 0;
+    }
+    &__content-warp{
+        position: relative;
+        width: 100%;
+        height: 100%;
+    }
+    &__content-mask{
+        display: block;
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        opacity: 0;
+        background-color:@drawer-mask-background-color;
+        &--hidden{
+            display: none;
+        }
+    }
+}

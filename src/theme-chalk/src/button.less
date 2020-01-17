@@ -1,0 +1,118 @@
+@import './common/var';
+@import './icon';
+
+
+.tom-button-size(@size) {
+    height: @size;
+    line-height: @size - 2px;
+    padding: 0px @size * 0.3;
+    border-radius: @size * 0.15;
+    font-size: @size * 0.35;
+
+    &.tom-button--ring {
+        border-radius: @size / 2;
+    }
+}
+
+.tom-button-create(@color, @background) {
+    color: @color;
+    background: @background;
+    &:focus {
+        outline: none;
+    }
+
+    &>a {
+        color: @color;
+        display: block;
+        position: absolute;
+        left: 0;
+        top: 0;
+        bottom: 0;
+        right: 0;
+        text-decoration: none;
+        &:focus {
+            outline: none;
+        }
+    }
+
+    &.tom-button--plain {
+        border: @border-width-base solid @border-color;
+        background: #fff;
+        color: @background;
+        border-color: @background;
+    }
+
+    &.tom-button--size-mini {
+        .tom-button-size(@button-mini-size);
+    }
+
+    &.tom-button--size-small {
+        .tom-button-size(@button-small-size);
+    }
+
+    &.tom-button--size-default {
+        .tom-button-size(@button-default-size);
+    }
+
+    &.tom-button--size-large {
+        .tom-button-size(@button-large-size);
+    }
+}
+
+.tom-button {
+    display: inline-block;
+    box-sizing: border-box;
+    padding: 0;
+    text-align: center;
+    border:none;
+    cursor: pointer;
+    -webkit-appearance: none;
+    -webkit-text-size-adjust: 100%;
+    position: relative;
+
+    &--default {
+        border: @border-width-base solid @border-color;
+        .tom-button-create(@text-color, @white);
+
+        &.tom-button--plain {
+            color: @text-color;
+            border-color: @border-color;
+        }
+    }
+
+    &--primary {
+        .tom-button-create(@white, @green);
+    }
+
+    &--info {
+        .tom-button-create(@white, @blue);
+    }
+
+    &--warning {
+        .tom-button-create(@white, @orange);
+    }
+
+    &--danger {
+        .tom-button-create(@white, @red);
+    }
+
+    .tom-button__icon {
+        vertical-align: middle;
+        margin: -6px 6px 0 0;
+        font-size: 1.1em;
+    }
+    
+    &--loading,
+    &--disabled {
+        &::after {
+            position: absolute;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            right: 0;
+            content: " ";
+            opacity: @disabled-opacity;
+            background: rgba(255, 255, 255, 1 - @active-opacity);
+        }
+    }
+}

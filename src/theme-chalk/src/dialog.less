@@ -1,0 +1,68 @@
+@import './common/var';
+@import './common/hairline';
+@import './popup';
+
+.tom-dialog {
+    text-align: center;
+    background: #fff;
+    
+    &__container{
+        border-radius: 20PX;
+        overflow: hidden;
+    }
+
+    &__title {
+        padding-top: 24PX;
+        line-height: 24PX;
+        font-size: 16PX;
+        color: @text-color;
+    }
+
+    &__content {
+        max-height: 60vh;
+        padding: 24PX;
+        overflow-y: auto;
+        font-size: 14PX;
+        line-height: 20PX;
+        white-space: pre-wrap;
+        text-align: center;
+        word-wrap: break-word;
+    }
+
+    &__footer {
+        height: 44PX;
+        display: flex;
+        flex-direction: row;
+
+        &-button {
+            font-size: 16PX;
+            box-sizing: border-box;
+            text-align: center;
+            border: none;
+            padding: 0;
+            cursor: pointer;
+            border: none;
+            background: none;
+            line-height: 44PX;
+            flex: 1;
+
+            &:focus {
+                outline: none;
+            }
+
+            i {
+                margin-top: -3PX;
+                margin-right: 5PX;
+            }
+
+            &--loading {
+                color: @gray;
+                background: @background-color;
+            }
+        }
+    }
+
+    &__title + &__content {
+        padding-top: 12PX;
+    }
+}

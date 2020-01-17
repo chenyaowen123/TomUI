@@ -1,0 +1,32 @@
+{
+  "name": "tom-ui-dock",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "serve": "vue-cli-service serve",
+    "build": "vue-cli-service build",
+    "lint": "vue-cli-service lint",
+    "clean": "rimraf lib && rimraf src/*/lib",
+    "build:entry": "node build/build-entry.js && node build/build-style-entry.js",
+    "build:lib": "vue-cli-service build --target lib --name tomUI --dest lib src/index.js",
+    "build:style": "node build/build-style-entry.js && gulp build --gulpfile src/theme-chalk/gulpfile.js && cp-cli src/theme-chalk/lib lib/theme-chalk",
+    "build:all": "node build/build-lib.js "
+  },
+  "dependencies": {
+    "vue": "^2.6.10"
+  },
+  "devDependencies": {
+    "@vue/cli-plugin-babel": "^3.5.0",
+    "@vue/cli-plugin-eslint": "^3.5.0",
+    "@vue/cli-service": "^3.5.0",
+    "@vue/eslint-config-prettier": "^4.0.1",
+    "babel-eslint": "^10.0.1",
+    "eslint": "^5.8.0",
+    "eslint-plugin-vue": "^5.0.0",
+    "vue-template-compiler": "^2.5.21",
+    "cp-cli": "^2.0.0",
+    "shelljs": "^0.8.3",
+    "signale": "^1.4.0",
+    "uppercamelcase": "^3.0.0"
+  }
+}

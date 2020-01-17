@@ -1,0 +1,85 @@
+@import './common/var';
+
+.tom-scroll {
+    overflow: hidden !important;
+    position: relative;
+    background-color: @background-color;
+
+
+    &__scroll-x,
+    &__scroll-y {
+        background: rgba(0, 0, 0, .3);
+    }
+
+    &__scroll-content {
+        min-height: 100%;
+        min-width: 100%;
+        background: #fff;
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: auto;
+    }
+
+    &__scroll-x {
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        height: 6PX;
+        width: 100%;
+        border-radius: 3PX;
+    }
+
+    &__scroll-y {
+        position: absolute;
+        right: 0;
+        top: 0;
+        width: 6PX;
+        height: 100%;
+        border-radius: 3PX;
+    }
+
+    &__loading-top,
+    &__loading-bottom {
+        position: absolute;
+        display: block;
+        height: 36PX;
+        background: rgba(255, 255, 255, .7);
+        border-radius: 18PX;
+        padding: 0 12PX;
+        line-height: 36PX;
+        left: 50%;
+        color: #333;
+        white-space: nowrap;
+        box-shadow:#ccc 0 0 3PX;
+        i{
+            font-size: 16PX;
+            vertical-align: middle;
+        }
+        font{
+            font-size:14PX;
+            padding-left: 5PX;
+            vertical-align: middle;
+        }
+    }
+
+    &__loading-top {
+        top: 0;
+        transform: translate(-50%, -40PX);
+    }
+
+    &__loading-bottom {
+        bottom: 0;
+        transform: translate(-50%, 40PX);
+    }
+
+    &__overlay {
+        position: absolute;
+        left: 0;
+        top: 0;
+        bottom: 0;
+        right: 0;
+        background: rgba(255, 255, 255, .1);
+    }
+
+}

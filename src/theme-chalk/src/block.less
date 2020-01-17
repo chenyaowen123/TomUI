@@ -1,0 +1,46 @@
+@import './common/var';
+
+.tom-block {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    position: relative;
+
+    &--horizontal {
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    &--vertical {
+        top: 50%;
+        transform: translateY(-50%);
+    }
+
+    &--middle {
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+    }
+
+    &--ellipsis {
+        overflow: hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+    }
+
+
+    &--ellipsisWebkit {
+        display: -webkit-box;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        -webkit-box-orient: vertical;
+    }
+
+    &--nested {
+        position: absolute;
+    }
+
+    &--animation {
+        transition: width @animation-duration-base, height @animation-duration-base, left @animation-duration-base, top @animation-duration-base, right @animation-duration-base, bottom @animation-duration-base;
+    }
+}
